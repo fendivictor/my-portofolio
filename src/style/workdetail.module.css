@@ -1,0 +1,40 @@
+.bannerArea {
+    background-color: #90acd1;
+}
+
+.bannerText {
+    color: #fff;
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.textWrapper {
+    padding-top: 190px;
+    padding-bottom: 120px;
+    text-align: center;
+}
+
+.detailsArea {
+    padding: 150px 0;
+}
+
+.imgWork {
+    width: 100%;
+}
+
+.workTitle {
+    color: #000;
+}
+
+.workDescription {
+    text-align: justify;
+}
+
+.listTechnologies {
+    padding-left: 15px;
+    font-size: 13px;
+}
+
+.listWrapper {
+    margin-top: 20px;
+}

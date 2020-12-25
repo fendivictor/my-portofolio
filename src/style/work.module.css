@@ -1,0 +1,40 @@
+.workArea {
+    background-color: #f9f9ff;
+    padding-top: 150px;
+    padding-bottom: 130px;
+}
+
+.sectionTitle {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 120px;
+    text-transform: capitalize;
+    position: relative;
+    line-height: 44px;
+    color: #000;
+}
+
+.sectionTitle::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -35px;
+    width: 10px;
+    height: 10px;
+    background: #e45447;
+    border-radius: 7px;
+}
+
+.sectionTitle::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -31px;
+    width: 100px;
+    height: 2px;
+    background: #e45447;
+}
+
+.workThumbWrapper {
+    position: relative;
+}

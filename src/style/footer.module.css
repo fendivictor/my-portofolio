@@ -1,0 +1,9 @@
+.footerWrapper {
+    width: 100%;
+    padding: 50px 0;
+}
+
+.footerText {
+    text-align: center;
+    font-weight: 400;
+}
