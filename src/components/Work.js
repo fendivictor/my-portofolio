@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
 import classes from '../style/work.module.css';
 import WorkThumb from '../components/WorkThumb';
+import Modal from '../components/UI/Modal/Modal';
+import WorkDetail from '../components/WorkDetail';
 
 class Work extends Component {
     constructor(props) {
         super(props);
+
         this.state = {
-            works: []
+            works: [],
+            modalShow: false,
+            workDetail: {}
         }
+
+        this.onClickWorkHandler = this.onClickWorkHandler.bind(this);
     }
 
     componentDidMount() {
@@ -23,6 +30,23 @@ class Work extends Component {
             .catch(error => console.log('an error occured while fetching data'))
     }
 
+    onClickWorkHandler = (id) => {
+        this.state.works.forEach(row => {
+            if (row.id === id) {
+                this.setState({
+                    modalShow: true,
+                    workDetail: row
+                });
+            }
+        });
+    }
+
+    onCloseModal = () => {
+        this.setState({
+            modalShow: false
+        });
+    }
+
     render() {
         return(
             <div className={classes.workArea}>
@@ -31,11 +55,14 @@ class Work extends Component {
                     <div className={classes.workThumbWrapper}>
                         {
                             this.state.works.map((val, index) => (
-                                <WorkThumb key={val.id} id={val.id} picture={val.img} title={val.title} alt={val.title} />
+                                <WorkThumb showDetail={this.onClickWorkHandler} key={val.id} id={val.id} picture={val.img} title={val.title} alt={val.title} />
                             ))
                         }
                     </div>
                 </div>
+                <Modal show={this.state.modalShow} modalClosed={this.onCloseModal}>
+                    <WorkDetail data={this.state.workDetail} />
+                </Modal>
             </div>
         );
     }

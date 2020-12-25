@@ -6,6 +6,10 @@ import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
 class Home extends Component {
+    constructor(props) {
+        super(props);
+    }
+
     render() {
         return (
             <div>
