@@ -4,7 +4,7 @@ import classes from '../style/workdetail.module.css';
 const workDetail = (props) => {
     let link;
     if (props.data.url !== '') {
-        link =  <div>
+        link =  <div className={classes.linkWrapper}>
                     <span>Url: </span>
                     <a href={props.data.url} target="_blank" rel="noreferrer">{props.data.url}</a>
                 </div>;
